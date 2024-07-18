@@ -1,0 +1,74 @@
+.eventFormContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #33c575;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formField {
+  margin-bottom: 15px;
+}
+
+.formField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.formField input[type="text"],
+.formField input[type="email"],
+.formField input[type="number"],
+.formField input[type="password"],
+.formField input[type="datetime-local"],
+.formField textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formField textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.formFieldsplit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.formFieldsplit label {
+  margin-right: 10px;
+}
+
+.formFieldsplit input,
+.formFieldsplit select {
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}

@@ -1,0 +1,94 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.container_ed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; /* Center horizontally and add top margin */
+
+  @media (max-width: 600px) {
+    margin-top: 20px; /* Reduce top margin for smaller screens */
+  }
+}
+
+.content_ed {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  @include box-shadow;
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+
+  h1 {
+    color: $blue-color2;
+    font-size: 40px;
+    text-align: left;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid gray; /* Border color defined in variables */
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    th {
+      background-color: white; /* Header background color */
+      color: white; /* Header text color */
+    }
+  }
+
+  .login-button {
+    background-color: white !important;
+    color: $blue-color2;
+    width: 90%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    @include box-shadow;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 20px 0;
+
+    &:hover {
+      background-color: $blue-color2;
+      color: $blue-color;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    &:active {
+      transform: translateY(3px) translateX(3px);
+      transition-duration: 100ms;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 19px; /* Smaller font size for smaller screens */
+      font-weight: 600;
+      width: 90%; /* Full width for smaller screens */
+      margin: 10px 0;
+
+      &:hover {
+        background-color: $blue-color2;
+        color: $blue-color;
+        font-size: 21px;
+      }
+
+      &:active {
+        transform: translateY(3px) translateX(3px);
+        transition-duration: 100ms;
+      }
+    }
+  }
+}

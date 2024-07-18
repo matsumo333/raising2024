@@ -1,0 +1,168 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* 最大幅を600pxに設定 */
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; /* 水平中央揃えと上部マージンを追加 */
+
+  @media (max-width: 600px) {
+    margin-top: 20px; /* 小さい画面の場合は上部マージンを減らす */
+  }
+}
+
+.content {
+  width: 90%;
+  border-color: $blue-color2;
+  box-sizing: 20pxs;
+  background-color: $blue-color2;
+  transition: 200ms;
+  border-radius: 5px;
+  @include box-shadow;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+
+  .content2 {
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 横方向の中央揃え */
+    width: 100%; /* 親の幅を100%に設定 */
+    position: relative; /* close-buttonの位置を調整するためにrelativeに設定 */
+
+    h1 {
+      color: white;
+      flex: 0 0 auto; /* メールアドレスの幅を自動に設定 */
+      @media (max-width: 600px) {
+        font-size: 24px;
+        padding: 0;
+      }
+    }
+
+    .close-button {
+      position: absolute; /* close-buttonを絶対位置に設定 */
+      right: 10px; /* 親の右端からの距離を設定 */
+      margin-top: 18px !important;
+      background: white !important;
+      color: black;
+      padding: 3px 3px 5px 3px !important; /* すべてのpaddingを0に設定 */
+      width: 24px;
+      height: 24px;
+      font-size: 22px !important;
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+      margin-right: 10px;
+
+      @media (max-width: 600px) {
+        margin-top: 6px;
+        font-size: 16px !important;
+        padding: 4px 0 0 0 !important;
+        width: 22px;
+        height: 24px !important;
+      }
+    }
+  }
+
+  .content3 {
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 横方向の中央揃え */
+    width: 90%; /* 親の幅を100%に設定 */
+    flex-direction: column;
+  }
+
+  p {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 5px 0 !important;
+    font-size: 30px !important;
+    color: white;
+    font-weight: 600;
+
+    @media (max-width: 600px) {
+      font-size: 24px !important; /* 小さい画面の場合はフォントサイズを小さく */
+      margin: 20px 0 5px 20px;
+    }
+  }
+
+  .login-input {
+    background-color: white !important;
+    color: $blue-color2;
+    width: 450px;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px 0;
+    margin: 10px 20px 10px;
+
+    @media (max-width: 600px) {
+      font-size: 12px; /* 小さい画面の場合はフォントサイズを小さく */
+      font-weight: 600;
+      max-width: 350px;
+      padding: 5px 0;
+      width: 100%; /* 小さい画面の場合は全体幅を90%に設定 */
+      margin: 10px 0;
+    }
+  }
+
+  .login-button {
+    background-color: white !important;
+    color: $blue-color2;
+    width: 70%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    @include box-shadow;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 20px 0;
+    max-width: 330px;
+
+    @media (max-width: 600px) {
+      width: 70% !important;
+      max-width: 280px;
+      font-size: 16px !important;
+      padding: 6px 0;
+      margin: 20px 0 15px 0 !important;
+    }
+
+    &:hover {
+      background-color: $blue-color2;
+      color: $blue-color;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    &:active {
+      transform: translateY(3px) translateX(3px);
+      transition-duration: 100ms;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 19px; /* Smaller font size for smaller screens */
+      font-weight: 600;
+      width: 90%; /* Full width for smaller screens */
+      margin: 10px 0;
+
+      &:hover {
+        background-color: $blue-color2;
+        color: $blue-color;
+        cursor: pointer;
+        font-size: 21px;
+      }
+
+      &:active {
+        transform: translateY(3px) translateX(3px);
+        transition-duration: 100ms;
+      }
+    }
+  }
+}

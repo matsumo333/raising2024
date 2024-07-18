@@ -1,0 +1,136 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.eventListContainer {
+  font-weight: 100;
+  width: 100%; // コンテナを全幅にする
+  overflow-x: auto; // 必要に応じて水平スクロールを有効にする
+
+  .sankasumi {
+    width: 100%;
+    padding: 10px;
+    background-color: $blue-color2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    margin: auto;
+  }
+
+  .event_title {
+    background-color: $blue-color2;
+    color: white;
+    height: 40px;
+    text-align: center;
+    border: 1px solid white; // タイトル部分の枠線を白色にする
+  }
+
+  .participantList {
+    width: 100px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .sanka {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .button2 {
+    width: 100%;
+    background-color: #21d89b;
+    text-align: center; /* ボタンの中央揃え */
+    margin: auto;
+    font-size: 20px;
+  }
+
+  button {
+    width: 100%;
+    background-color: $blue-color;
+    text-align: center; /* ボタンの中央揃え */
+    margin: auto;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  td,
+  th {
+    text-align: center;
+    vertical-align: middle; /* 垂直方向の中央揃え */
+    border: 1px solid $blue-color; // セルの間に灰色の枠線を追加
+  }
+
+  tr {
+    border: 1px solid $blue-color; // 行の間に灰色の枠線を追加
+  }
+
+  tr:nth-child(even) {
+    background-color: lightgray; // 偶数行の背景色
+  }
+
+  tr:nth-child(odd) {
+    background-color: white; // 奇数行の背景色
+  }
+
+  table {
+    width: 100%; // テーブルを全幅にする
+    border-collapse: collapse;
+  }
+
+  /* 画面幅が狭いときに特定の列を非表示にする */
+  @media (max-width: 768px) {
+    .hide-on-narrow {
+      display: none;
+    }
+  }
+
+  /* その他のレスポンシブ調整用のメディアクエリ */
+  @media (max-width: 1200px) {
+    table {
+      font-size: 18px;
+    }
+
+    th,
+    td {
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    table {
+      font-size: 16px;
+    }
+
+    th,
+    td {
+      padding: 4px;
+    }
+
+    .button2,
+    button {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    table {
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      padding: 2px;
+    }
+
+    .button2,
+    button {
+      font-size: 14px;
+    }
+
+    .event_title {
+      font-size: 16px;
+    }
+  }
+}

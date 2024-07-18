@@ -1,0 +1,11 @@
+//mixins.scss
+
+@mixin box-shadow(
+  $color: black,
+  $offset-x: 8px,
+  $offset-y: 8px,
+  $blur: 8px,
+  $spread: -5px
+) {
+  box-shadow: $offset-x $offset-y $blur $spread $color;
+}

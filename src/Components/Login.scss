@@ -1,0 +1,88 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; /* Center horizontally and add top margin */
+
+  @media (max-width: 600px) {
+    margin-top: 20px; /* Reduce top margin for smaller screens */
+  }
+}
+
+.content {
+  width: 90%;
+  border-color: $blue-color2;
+  box-sizing: 20pxs;
+  background-color: $blue-color2;
+  transition: 200ms;
+  border-radius: 5px;
+  @include box-shadow;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+
+  p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+
+    @media (max-width: 600px) {
+      font-size: 18px; /* Smaller font size for smaller screens */
+      margin-top: 15px;
+    }
+  }
+
+  .login-button {
+    background-color: white !important;
+    color: $blue-color2;
+    width: 90%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    @include box-shadow;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 20px 0;
+
+    &:hover {
+      background-color: $blue-color2;
+      color: $blue-color;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    &:active {
+      transform: translateY(3px) translateX(3px);
+      transition-duration: 100ms;
+    }
+    @media (max-width: 600px) {
+      font-size: 19px; /* Smaller font size for smaller screens */
+      font-weight: 600;
+      width: 90%; /* Full width for smaller screens */
+      margin: 10px 0;
+      &:hover {
+        background-color: $blue-color2;
+        color: $blue-color;
+        cursor: pointer;
+        font-size: 21px;
+      }
+
+      &:active {
+        transform: translateY(3px) translateX(3px);
+        transition-duration: 100ms;
+      }
+    }
+  }
+}
