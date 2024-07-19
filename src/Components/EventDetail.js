@@ -307,18 +307,22 @@ const EventDetail = () => {
             <td>その他</td>
             <td>{event.detail}</td>
           </tr>
-
           <tr>
             <td>参加申込者</td>
             <td>
-              <label htmlFor={`participants-${event.id}`}></label>
-              <div className="participantListContainer">
-                <ParticipantList
-                  id={`participants-${event.id}`}
-                  eventId={event.id}
-                  eventMembers={eventMembers}
-                  navigate={navigate}
-                />
+              <div className="participantsContainer">
+                {eventMembers
+                  .filter((member) => member.eventId === event.id)
+                  .map((member) => (
+                    <div>
+                      <button
+                        key={member.memberId}
+                        onClick={() => navigate(`/eventcancel/${event.id}`)}
+                      >
+                        {member.accountname}
+                      </button>
+                    </div>
+                  ))}
               </div>
             </td>
           </tr>

@@ -31,7 +31,13 @@
 }
 
 .eventDetailTable td:nth-child(1) {
-  min-width: 40px; /* 最小幅を指定 */
+  width: 200px;
+
+  @media (max-width: 576px) {
+    font-size: 18px !important;
+    width: 70px;
+    min-width: 60px; /* 最小幅を指定 */
+  }
 }
 
 .eventDetailTable td:nth-child(2) {
@@ -77,17 +83,6 @@
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
-}
-
-.participantListContainer {
-  display: flex;
-  flex-wrap: wrap; /* 横並びで収まらない場合、次の行に折り返す */
-  gap: 10px; /* アイテム間のスペース */
-}
-
-.participantList {
-  flex: 1 1 auto; /* アイテムのサイズを自動で調整 */
-  max-width: 200px; /* 最大幅を指定 */
 }
 
 .button2 {
@@ -155,4 +150,31 @@
   padding: 2px;
   margin-bottom: 5px !important;
   cursor: pointer; /* Changes cursor to pointer on hover */
+}
+/* EventDetail.scss */
+
+.participantsContainer {
+  display: flex;
+  flex-wrap: wrap; /* ボタンが枠を超えた場合に折り返す */
+  gap: 10px; /* ボタン間のスペース */
+  padding: 5px; /* コンテナの内側にスペースを追加 */
+  justify-content: flex-start; /* ボタンを左端に揃える */
+}
+
+.participantsContainer button {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 1px solid black; /* ボタンの枠線 */
+  border-radius: 4px; /* 任意で角を丸くする */
+  width: 200px;
+  height: 30px;
+  padding: 0 10px; /* ボタンの内側にスペースを追加 */
+  cursor: pointer; /* ホバー時にポインターを表示 */
+  white-space: nowrap; /* ボタン内のテキストが折り返されないようにする */
+  @media (max-width: 576px) {
+    width: 80px;
+    font-size: 14px;
+  }
 }
