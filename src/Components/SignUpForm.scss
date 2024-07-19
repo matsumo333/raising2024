@@ -1,7 +1,7 @@
 @import "../styles/variables";
 @import "../styles/mixins";
 
-.container {
+.container_su {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -15,7 +15,7 @@
   }
 }
 
-.content {
+.content_su {
   width: 90%;
   box-sizing: 20pxs;
   background-color: $blue-color2;
@@ -28,8 +28,20 @@
   justify-content: center;
   flex-direction: column;
   margin: 10px;
+  .signup-form {
+    background-color: transparent;
+    p {
+      color: white;
+      margin: 18px 12px 0 !important;
+      font-size: 28px !important;
+      @media (max-width: 600px) {
+        font-size: 24px !important; /* 小さい画面の場合はフォントサイズを小さく */
+        margin: 10px 0 5px 0 !important;
+      }
+    }
+  }
 
-  .content2 {
+  .content2_su {
     display: flex;
     align-items: center; /* 垂直方向の中央揃え */
     justify-content: center; /* 横方向の中央揃え */
@@ -39,13 +51,16 @@
     h1 {
       color: white;
       flex: 0 0 auto; /* メールアドレスの幅を自動に設定 */
+      padding: 0;
+      margin: 10px;
+      font-size: 28px !important;
       @media (max-width: 600px) {
-        font-size: 24px;
+        font-size: 20px !important;
         padding: 0;
       }
     }
   }
-  .content3 {
+  .content3_su {
     display: flex;
     align-items: center; /* 垂直方向の中央揃え */
     justify-content: center; /* 横方向の中央揃え */
@@ -67,30 +82,31 @@
     }
   }
 
-  .login-input {
+  .login-input_su,
+  .login-input_sue {
     background-color: white !important;
     color: $blue-color2;
-    width: 450px;
-
+    width: 450px !important; /* 幅を600pxに設定 */
     border: none;
     font-size: 20px;
     font-weight: 400;
     padding: 8px 0;
-    margin: 10px 20px 10px;
+    margin: 10px 10px 10px;
     @media (max-width: 600px) {
       font-size: 12px; /* 小さい画面の場合はフォントサイズを小さく */
       font-weight: 600;
-      max-width: 350px;
+      max-width: 400px;
+      width: 92% !important;
       padding: 5px 0;
-      width: 100%; /* 小さい画面の場合は全体幅を90%に設定 */
+
       margin: 10px 0;
     }
   }
 
-  .login-button {
+  .login-button_su {
     background-color: white !important;
     color: $blue-color2;
-    width: 70%;
+    width: 90%;
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -119,9 +135,9 @@
       transition-duration: 100ms;
     }
     @media (max-width: 600px) {
-      font-size: 19px; /* Smaller font size for smaller screens */
+      font-size: 19px; /* 小さい画面の場合はフォントサイズを小さく */
       font-weight: 600;
-      width: 90%; /* Full width for smaller screens */
+      width: 90%; /* 小さい画面の場合は全体幅を設定 */
       margin: 10px 0;
       &:hover {
         background-color: $blue-color2;
@@ -137,7 +153,7 @@
     }
   }
 
-  .lubi {
+  .lubi_su {
     color: white;
     width: 90%;
     font-size: 18px;
@@ -148,23 +164,38 @@
     }
   }
 }
-.close-button3 {
+.close-button3_su {
   position: absolute; /* close-buttonを絶対位置に設定 */
   right: 10px; /* 親の右端からの距離を設定 */
-  margin-top: 10px;
+  margin-top: 1px;
   background: white !important;
   color: black;
-  width: 36px;
-  text-align: center;
-  font-size: 22px;
-  padding-bottom: 4px;
+  width: 30px;
+  // text-align: center;
+  font-size: 18px !important;
+  padding: 0 !important;
+  padding-bottom: 2px !important;
   cursor: pointer;
 
   @media (max-width: 600px) {
     margin-top: 8px;
-    font-size: 16px !important;
-    width: 30px;
-    height: 32px;
+    font-size: 14px !important;
+    width: 20px;
+    height: 20px;
     text-align: center;
+    padding: 0 !important;
+    margin-top: 0;
+    padding-bottom: 2px;
+  }
+}
+.signup-password-show-button {
+  font-size: 18px;
+  margin-top: 10px !important;
+  width: 130px;
+  padding: 7px !important;
+  @media (max-width: 600px) {
+    font-size: 14px;
+    width: 80px;
+    padding: 3px !important;
   }
 }

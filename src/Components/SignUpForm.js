@@ -41,7 +41,15 @@ const SignUpForm = ({ setIsAuth }) => {
         navigate("/home");
       }, 3000); // 3秒後にホームに移動
     } catch (e) {
-      alert(e.message);
+      if (e.code === "auth/email-already-in-use") {
+        alert("このメールアドレスはすでに使用されています。");
+      } else if (e.code === "auth/invalid-email") {
+        alert("無効なメールアドレスです。");
+      } else if (e.code === "auth/weak-password") {
+        alert("パスワードが弱すぎます。");
+      } else {
+        alert("登録中にエラーが発生しました。");
+      }
     }
   };
 
@@ -49,8 +57,8 @@ const SignUpForm = ({ setIsAuth }) => {
     setPasswordConfirmation(e.target.value);
   };
 
-  const handleTogglePasswordVisibility = (isVisible) => {
-    setShowPassword(isVisible);
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   const handleHomeRedirect = () => {
@@ -78,12 +86,12 @@ const SignUpForm = ({ setIsAuth }) => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="content">
-        <div className="content2">
+    <div className="container_su">
+      <div className="content_su">
+        <div className="content2_su">
           <h1>新規登録</h1>
           <button
-            className="close-button3"
+            className="close-button3_su"
             onClick={() => {
               navigate("/login");
             }}
@@ -92,26 +100,27 @@ const SignUpForm = ({ setIsAuth }) => {
           </button>
         </div>
       </div>
-      <div className="content">
+      <div className="content_su">
         {!signupSuccess ? (
           <div>
             <form className="" onSubmit={handleSignUp}>
               <div className="signup-form">
                 <p>email</p>
                 <input
-                  className="login-input"
+                  className="login-input_sue"
                   name="email"
                   type="email"
+                  ref={emailInputRef}
                 ></input>
               </div>
               <div className="signup-form">
                 <p>パスワード</p>
-                <label className="lubi">
+                <label className="lubi_su">
                   6〜15文字で、大文字、小文字、数字を含むもの
                 </label>
                 <div className="signup-form-password">
                   <input
-                    className="login-input"
+                    className="login-input_su"
                     name="password"
                     type={showPassword ? "text" : "password"}
                   ></input>
@@ -119,9 +128,12 @@ const SignUpForm = ({ setIsAuth }) => {
                     <button
                       className="signup-password-show-button"
                       type="button"
-                      onMouseDown={() => handleTogglePasswordVisibility(true)}
-                      onMouseUp={() => handleTogglePasswordVisibility(false)}
-                      onMouseLeave={() => handleTogglePasswordVisibility(false)} // マウスがボタンを離れたときも非表示にする
+                      onMouseDown={() => setShowPassword(true)}
+                      onMouseUp={() => setShowPassword(false)}
+                      onMouseLeave={() => setShowPassword(false)}
+                      onTouchStart={() => setShowPassword(true)}
+                      onTouchEnd={() => setShowPassword(false)}
+                      onClick={handleTogglePasswordVisibility}
                     >
                       Show
                     </button>
@@ -131,14 +143,13 @@ const SignUpForm = ({ setIsAuth }) => {
               <div className="signup-form">
                 <p>パスワード再確認</p>
                 <input
-                  className="login-input"
+                  className="login-input_su"
                   type="password"
                   value={passwordConfirmation}
                   onChange={handlePasswordConfirmationChange}
                 ></input>
               </div>
-              {/* <label className="signup-form-label">新規登録</label> */}
-              <button className="login-button" type="submit">
+              <button className="login-button_su" type="submit">
                 新規登録
               </button>
             </form>
