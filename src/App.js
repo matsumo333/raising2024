@@ -13,7 +13,7 @@ import EventList from "./Components/EventList";
 import EventSelect from "./Components/EventSelect";
 import EventCreate from "./Components/EventCreate";
 import EventForm from "./Components/EventForm";
-import EventDetial from "./Components/EventDetial";
+import EventDetail from "./Components/EventDetail";
 import EventEdit from "./Components/EventEdit";
 import EventCancel from "./Components/EventCancel";
 
@@ -54,8 +54,8 @@ function App() {
         <Route path="/eventlist" element={<EventList isAuth={isAuth} />} />
         <Route path="/eventselect" element={<EventSelect isAuth={isAuth} />} />
         <Route
-          path="/eventdetial/:id"
-          element={<EventDetial isAuth={isAuth} />}
+          path="/eventdetail/:id"
+          element={<EventDetail isAuth={isAuth} />}
         />
         <Route path="/eventform" element={<EventForm isAuth={isAuth} />} />
         <Route path="/eventedit/:id" element={<EventEdit isAuth={isAuth} />} />

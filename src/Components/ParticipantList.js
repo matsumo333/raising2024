@@ -6,12 +6,6 @@ export const ParticipantList = ({ eventId, eventMembers, navigate }) => {
     <button
       key={member.memberId}
       onClick={() => navigate(`/eventcancel/${eventId}`)}
-      style={{
-        fontSize: "18px",
-        padding: "1px 2px",
-        marginBottom: "2px",
-        fontWeight: "bolder",
-      }}
     >
       {member.accountname}
     </button>

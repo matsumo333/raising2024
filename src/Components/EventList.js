@@ -242,7 +242,7 @@ const EventList = () => {
                     backgroundColor: "#1eb300",
                     fontSize: "20px",
                   }}
-                  onClick={() => navigate(`/eventdetial/${event.id}`)}
+                  onClick={() => navigate(`/eventdetail/${event.id}`)}
                 >
                   {event.title}
                 </button>

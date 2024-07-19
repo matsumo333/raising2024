@@ -1,0 +1,158 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.eventDetailContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  @media (max-width: 576px) {
+    width: 90%;
+  }
+}
+
+.eventDetailTable {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 24px !important;
+
+  @media (max-width: 576px) {
+    font-size: 18px !important;
+    width: 95%;
+  }
+}
+
+.eventDetailTable td {
+  font-weight: bold !important;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #6476ed;
+  background-color: rgba($navbar-color, 0.85);
+}
+
+.eventDetailTable td:nth-child(1) {
+  min-width: 40px; /* 最小幅を指定 */
+}
+
+.eventDetailTable td:nth-child(2) {
+  background-color: #f9f9f9 !important;
+  text-align: left;
+}
+
+.eventDetailTable td button {
+  display: block;
+  margin: 0 auto; /* ボタンを中央に配置 */
+}
+.eventDetailTable tr {
+  background-color: #f9f9f9 !important; /* すべての行に同じ背景色を適用 */
+}
+
+.eventItem {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.eventDetail {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.label {
+  flex: 1;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.value {
+  flex: 3;
+}
+
+.eventTitleButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.participantListContainer {
+  display: flex;
+  flex-wrap: wrap; /* 横並びで収まらない場合、次の行に折り返す */
+  gap: 10px; /* アイテム間のスペース */
+}
+
+.participantList {
+  flex: 1 1 auto; /* アイテムのサイズを自動で調整 */
+  max-width: 200px; /* 最大幅を指定 */
+}
+
+.button2 {
+  background-color: hsl(134, 61%, 41%);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  width: 60%;
+  font-size: 24px;
+  cursor: pointer;
+  @media (max-width: 576px) {
+    font-size: 18px;
+    width: 100%;
+  }
+}
+
+.button3 {
+  background-color: #2adf6d;
+  color: white;
+  width: 60%;
+  border: none;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+  @media (max-width: 576px) {
+    font-size: 18px;
+    width: 60%;
+  }
+}
+
+.deleteButton,
+.editButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.deleteButton:hover,
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+.default-text {
+  color: black !important;
+}
+
+.red-text {
+  color: red !important;
+}
+
+.blue-text {
+  color: blue !important;
+}
+
+.participant-list button {
+  font-size: 18px;
+  font-weight: bolder;
+  color: black;
+  background-color: white;
+  border: 1px solid black; /* Add border here */
+  border-radius: 4px; /* Optional: rounded corners */
+  height: 28px;
+  padding: 2px;
+  margin-bottom: 5px !important;
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
