@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.scss";
+import "./Navbar.css";
 
-const Navbar = ({ isAuth, accountName }) => {
+const Navbar = ({ isAuth }) => {
   const [menuActive, setMenuActive] = useState(false);
-  const [currentAccountName, setCurrentAccountName] = useState(accountName);
-
-  useEffect(() => {
-    setCurrentAccountName(accountName);
-  }, [accountName]);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -62,9 +57,6 @@ const Navbar = ({ isAuth, accountName }) => {
             </li>
             <li onClick={closeMenu}>
               <Link to="/logout">ログアウト</Link>
-            </li>
-            <li onClick={closeMenu}>
-              <span>{currentAccountName}</span>
             </li>
           </>
         )}
